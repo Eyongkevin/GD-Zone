@@ -11,7 +11,7 @@ img {
 .intro-image{
    display: flex;
    flex: 0 0 100%;
-   max-height: 800px;
+   max-height: 80%;
    background-color: blue;
    order: 1;
 }
@@ -98,6 +98,7 @@ aside p{
    width: 200px;
    height: 50px;
    font-size: 50%;
+   border: solid 4px red;
    margin-right: 100px;
 }
 .percentage-size,
@@ -105,6 +106,7 @@ aside p{
    width: 50px;
    height: 50px;
    font-size: 50%;
+   border: solid 4px red;
    margin-right: 100px;
 }
 
@@ -118,7 +120,8 @@ aside p{
    .how-to-info {
       display: flex;
       flex: 1 0 25.33%;
-      font-size: 20px;
+      font-size: 110%;
+      font-weight: 500;
       max-height: 350px;
       order: 1;
    }
@@ -142,6 +145,12 @@ aside p{
       flex: 0 0 100%;
       max-height: 500px;
       order: 4;
+   }
+   aside p{
+      margin-left: 11rem;
+   }
+   .input-example{
+      padding: 1rem;
    }
    body{
       max-width: 70rem;
