@@ -1,5 +1,6 @@
 import os
 import environ
+import dj_database_url
 from .base import *
 
 
@@ -21,17 +22,19 @@ SESSION_COOKIE_SECURE = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": env.str("DB_NAME"),  # database name
         "USER": env.str("DB_USER"),  # database user
         "PASSWORD": env.str("DB_PWD"),  # database password
-        # "HOST": "127.0.0.1",
+        "HOST": "127.0.0.1",
         "PORT": "5432",
     }
 }
+db_from_env = dj_database_url.config()
+DATABASES["default"].update(db_from_env)
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 import django_on_heroku
