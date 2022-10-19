@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% load workspace_tags %} {% load static %}
+<!---->
+{% block content %}
+<!---->
+<div class="intro-wrapper">
+  <div class="intro-image">
+    <img src="{% static "images/ui_example.jpeg" %}" alt="intro image" />
+  </div>
+  <div class="how-to-info">
+    <div class="inside-text">
+      <p>
+        Enter account <b>balance</b>, <b>percentage</b> and the number of
+        days(<b>period</b>) you'll like to calculate the estimate.
+      </p>
+      <h5>Example</h5>
+      <aside>
+        If your account balance has 1355.9733, and want to get an estimate of 5%
+        over a period of 7 days(one week), you can enter
+        <ul>
+          <li>balance: 1355</li>
+          <li>percentage: 5%</li>
+          <li>period: 7</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+  <div class="results">
+    <p>
+      Result: {% if data %}
+      <span class="result">{{ data.result|round_up:2 }}</span>
+      {% else %}
+      <span>___</span>
+      {% endif %}
+    </p>
+    {% if form %}
+  </div>
+  <div class="input-boxes">
+    <form method="post">
+      {{ form.as_table }} {% csrf_token %}
+      <button type="submit" class="submit-form">GO</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock content %}
