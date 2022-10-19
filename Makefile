@@ -34,6 +34,9 @@ dev-makemigration:
 prod-makemigration:
 	python manage.py makemigrations $(app) --settings=config.settings.prod
 
+push-heroku:
+	git push heroku prod:main
+	
 deploy-check:
 	python manage.py check --deploy --settings=config.settings.prod
 
