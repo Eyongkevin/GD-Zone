@@ -1,8 +1,10 @@
 import os
 import environ
 from .base import *
+import django_on_heroku
 
 
+ADMINS = (("Eyong Kevin", "tonyparkerkenz@gmail.com"),)
 env = environ.Env(DEBUG=(bool, False))
 
 environ.Env.read_env(os.path.join(BASE_DIR, ".env.prod"))
@@ -13,6 +15,8 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = ["*"]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 DATABASES = {
     "default": {
@@ -20,7 +24,8 @@ DATABASES = {
         "NAME": env.str("DB_NAME"),  # database name
         "USER": env.str("DB_USER"),  # database user
         "PASSWORD": env.str("DB_PWD"),  # database password
-        "HOST": "127.0.0.1",
+        # "HOST": "127.0.0.1",
         "PORT": "5432",
     }
 }
+django_on_heroku.settings(locals())

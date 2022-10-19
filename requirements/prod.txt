@@ -1,1 +1,2 @@
 -r base.txt
+django-on-heroku==1.1.2

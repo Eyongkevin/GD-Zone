@@ -31,5 +31,8 @@ dev-makemigration:
 prod-makemigration:
 	python manage.py makemigrations $(app) --settings=config.settings.prod
 
+deploy-check:
+	python manage.py check --deploy --settings=config.settings.prod
+
 dev-invest:
 	python manage.py sqlmigrate $(app) $(i) --settings=config.settings.dev
