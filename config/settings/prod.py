@@ -1,7 +1,6 @@
 import os
 import environ
 from .base import *
-import django_on_heroku
 
 
 ADMINS = (("Eyong Kevin", "tonyparkerkenz@gmail.com"),)
@@ -15,8 +14,13 @@ DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS: list[str] = ["*"]
 
+MIDDLEWARE = ["whitenoise.middleware.WhiteNoiseMiddleware"] + MIDDLEWARE
+
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 DATABASES = {
     "default": {
@@ -28,4 +32,8 @@ DATABASES = {
         "PORT": "5432",
     }
 }
+CORS_ORIGIN_ALLOW_ALL = True
+
+import django_on_heroku
+
 django_on_heroku.settings(locals())

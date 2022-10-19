@@ -5,11 +5,13 @@ from .utils import accumulative_percentage
 from .models import Statistic
 from django.db.models import F
 from django.http import HttpRequest
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
 
 # @login_required
+@csrf_exempt
 def accumulative_percentage_view(request: HttpRequest):
     """treat or return the form
 

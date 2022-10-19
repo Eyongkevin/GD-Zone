@@ -1,2 +1,3 @@
 -r base.txt
 django-on-heroku==1.1.2
+whitenoise==6.2.0

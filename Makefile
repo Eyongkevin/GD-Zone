@@ -19,6 +19,9 @@ dev-install:
 prod-install:
 	pip3 install -r requirements/prod.txt
 
+prod-static:
+	python manage.py  collectstatic --settings=config.settings.prod
+
 prod-migrate:
 	python manage.py migrate --settings=config.settings.prod
 

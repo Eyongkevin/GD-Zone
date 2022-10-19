@@ -1,0 +1,129 @@
+img {
+   display: flex;
+   align-items: center;
+   max-width: 100%;
+   max-height: 100%;
+}
+.intro-wrapper {
+   display: flex;
+   flex-direction: column;
+}
+.intro-image{
+   display: flex;
+   flex: 0 0 100%;
+   max-height: 800px;
+   background-color: blue;
+   order: 1;
+}
+.how-to-info{
+   display: flex;
+   flex: 0 0 100%;
+   max-height: 400px;
+   padding: 1rem 1rem;
+   border-radius: 1%;
+   background-color:orange;
+   font-size: x-large;
+   vertical-align: baseline;
+   order: 2;
+}
+.inside-text{
+   position:relative;
+   margin: 1rem 0 0.5rem 1rem;
+}
+.how-to-info h5{
+   color: red;
+   text-align: center;
+}
+.results{
+   display: flex;
+   max-height: 15px;
+   order: 3;
+}
+.result{
+   display: inline-flex;
+   font-size: 20px;
+   margin: 4px 2px;
+   color: white;
+   background-color: rgb(225, 110, 65);
+   border: none;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 50%;
+}
+.input-boxes{
+   display: flex;
+   align-items: center;
+   flex: 0 0 100%;
+   max-height: 200px;
+   order: 4;
+}
+.input-boxes form {
+   display: flex;
+   min-width: 100%;
+   padding: 20px;
+   gap: 3px;
+   border: 1px solid;
+   font-size:20px;
+   align-items: center;
+   justify-content: center;
+}
+.submit-form{
+   display: inline-flex;
+   font-size: 20px;
+   margin: 1px 2px;
+   color: white;
+   background-color: royalblue;
+   border: none;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   border-radius: 50%;
+   cursor: pointer;
+}
+.amount-size{
+   width: 100px;
+}
+.percentage-size,
+.period-size{
+   width: 50px;
+}
+
+@media screen and (min-width: 1000px) {
+   .intro-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+   }
+   .how-to-info {
+      display: flex;
+      flex: 1 0 25.33%;
+      font-size: 20px;
+      max-height: 350px;
+      order: 1;
+   }
+   .intro-image {
+      display: flex;
+      flex: 1 0 25.32px;
+      filter: drop-shadow(0 0 20px #0008);
+      border: 0;
+      height: 350px;
+      order: 2;
+   }
+   .results{
+      display: flex;
+      align-items: center;
+      flex: 0 0 100%;
+      max-height: 15px;
+      order: 3;
+   }
+   .input-boxes{
+      display: flex;
+      flex: 0 0 100%;
+      order: 4;
+   }
+   body{
+      max-width: 70rem;
+   }
+}
